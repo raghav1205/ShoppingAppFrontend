@@ -14,7 +14,7 @@ const Product = ({product}) => {
     // console.log(user)
     const useQuery = useQueryClient()
     const handleAddToCart = async () => { 
-        const API_URL = `http://localhost:8080/product/${product._id}/cart`
+        const API_URL = `${process.env.API_URL}/${product._id}/cart`
         const response = await fetch(API_URL, {
             method: 'POST',
             headers: {

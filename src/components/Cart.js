@@ -8,7 +8,7 @@ const Cart = () => {
   const queryClient = useQueryClient()
  
   const handleRemoveClick = async (id) => {
-    const API_URL = `http://localhost:8080/cart/${id}/decrement`
+    const API_URL = `${process.env.API_URL}/cart/${id}/decrement`
     const response = await fetch(API_URL, {
         method: 'DELETE',
         headers: {
@@ -24,7 +24,7 @@ const Cart = () => {
   }
 
   const handleAddClick = async (id) => {
-    const API_URL = `http://localhost:8080/cart/${id}/increment`
+    const API_URL = `${process.env.API_URL}/cart/${id}/increment`
     const response = await fetch(API_URL, {
         method: 'POST',
         headers: {

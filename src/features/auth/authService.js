@@ -1,4 +1,4 @@
-const API_URL = 'http://localhost:8080/login'
+const API_URL = `${process.env.API_URL}/login`
 
 const login  = async (user) => {
     try {
@@ -19,7 +19,7 @@ const login  = async (user) => {
     }
 }
 const logout = async () => {
-    const API_URL = 'http://localhost:8080/logout'
+    const API_URL = `${process.env.API_URL}/logout`
     const response = await fetch(API_URL)
     const res = await response.json()
     console.log(res)

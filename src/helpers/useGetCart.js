@@ -1,7 +1,7 @@
 import { useQuery } from "react-query"
 const useGetCart = (userid) => {
     const {data, isLoading, isError} = useQuery(['cart'], () => {
-        return fetch(`http://localhost:8080/cart/${userid}`).then(res => res.json())
+        return fetch(`${process.env.API_URL}/cart/${userid}`).then(res => res.json())
     },
     {
         enabled: !!userid

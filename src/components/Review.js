@@ -16,7 +16,7 @@ const Review = ({product}) => {
 
       console.log(productid)
 
-    const API_URL = `http://localhost:8080/products/${productid}/review`
+    const API_URL = `${process.env.API_URL}/products/${productid}/review`
     const response = await fetch(API_URL, {
         method: 'POST',
         headers: {
@@ -64,7 +64,7 @@ const ReviewTile = ({review, user, product, queryClient}) => {
     console.log(review)
     const ratingArr = new Array(review.rating).fill(0)
     const handleDelete = async ({reviewid, userid}) => {
-        const API = `http://localhost:8080/products/${product._id}/review/${review._id}`
+        const API = `${process.env.API_URL}/products/${product._id}/review/${review._id}`
         const response = await fetch(API, {
             method: 'DELETE',
             headers: {
