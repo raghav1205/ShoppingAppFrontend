@@ -1,4 +1,4 @@
-const REACT_APP_API_URL = `${process.env.REACT_APP_API_URL}/login`
+const REACT_APP_API_URL = `https://peaceful-beyond-47525.herokuapp.com/login`
 
 const login  = async (user) => {
     try {
@@ -19,7 +19,7 @@ const login  = async (user) => {
     }
 }
 const logout = async () => {
-    const REACT_APP_API_URL = `${process.env.REACT_APP_API_URL}/logout`
+    const REACT_APP_API_URL = `https://peaceful-beyond-47525.herokuapp.com/logout`
     const response = await fetch(REACT_APP_API_URL)
     const res = await response.json()
     console.log(res)

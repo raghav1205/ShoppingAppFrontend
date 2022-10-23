@@ -9,7 +9,7 @@ const Register = () => {
     const navigate = useNavigate()
     const handleClick = async () => {
       console.log('clicked');
-      const REACT_APP_API_URL = `${process.env.REACT_APP_API_URL}/register`;
+      const REACT_APP_API_URL = `https://peaceful-beyond-47525.herokuapp.com/register`;
       const response = await fetch(REACT_APP_API_URL, {
       
         method: 'POST',

@@ -8,7 +8,7 @@ const Cart = () => {
   const queryClient = useQueryClient()
  
   const handleRemoveClick = async (id) => {
-    const REACT_APP_API_URL = `${process.env.REACT_APP_API_URL}/cart/${id}/decrement`
+    const REACT_APP_API_URL = `https://peaceful-beyond-47525.herokuapp.com/cart/${id}/decrement`
     const response = await fetch(REACT_APP_API_URL, {
         method: 'DELETE',
         headers: {
@@ -24,7 +24,7 @@ const Cart = () => {
   }
 
   const handleAddClick = async (id) => {
-    const REACT_APP_API_URL = `${process.env.REACT_APP_API_URL}/cart/${id}/increment`
+    const REACT_APP_API_URL = `https://peaceful-beyond-47525.herokuapp.com/cart/${id}/increment`
     const response = await fetch(REACT_APP_API_URL, {
         method: 'POST',
         headers: {
