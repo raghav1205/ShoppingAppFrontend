@@ -8,8 +8,8 @@ const Cart = () => {
   const queryClient = useQueryClient()
  
   const handleRemoveClick = async (id) => {
-    const API_URL = `${process.env.API_URL}/cart/${id}/decrement`
-    const response = await fetch(API_URL, {
+    const REACT_APP_API_URL = `${process.env.REACT_APP_API_URL}/cart/${id}/decrement`
+    const response = await fetch(REACT_APP_API_URL, {
         method: 'DELETE',
         headers: {
             'Content-Type': 'application/json',
@@ -24,8 +24,8 @@ const Cart = () => {
   }
 
   const handleAddClick = async (id) => {
-    const API_URL = `${process.env.API_URL}/cart/${id}/increment`
-    const response = await fetch(API_URL, {
+    const REACT_APP_API_URL = `${process.env.REACT_APP_API_URL}/cart/${id}/increment`
+    const response = await fetch(REACT_APP_API_URL, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',

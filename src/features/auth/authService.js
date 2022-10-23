@@ -1,8 +1,8 @@
-const API_URL = `${process.env.API_URL}/login`
+const REACT_APP_API_URL = `${process.env.REACT_APP_API_URL}/login`
 
 const login  = async (user) => {
     try {
-        const response = await fetch(API_URL, {
+        const response = await fetch(REACT_APP_API_URL, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -19,8 +19,8 @@ const login  = async (user) => {
     }
 }
 const logout = async () => {
-    const API_URL = `${process.env.API_URL}/logout`
-    const response = await fetch(API_URL)
+    const REACT_APP_API_URL = `${process.env.REACT_APP_API_URL}/logout`
+    const response = await fetch(REACT_APP_API_URL)
     const res = await response.json()
     console.log(res)
     console.log('hi')

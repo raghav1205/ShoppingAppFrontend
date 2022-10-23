@@ -9,8 +9,8 @@ const Register = () => {
     const navigate = useNavigate()
     const handleClick = async () => {
       console.log('clicked');
-      const API_URL = 'http://localhost:8080/register';
-      const response = await fetch(API_URL, {
+      const REACT_APP_API_URL = `${process.env.REACT_APP_API_URL}/register`;
+      const response = await fetch(REACT_APP_API_URL, {
       
         method: 'POST',
         headers: {

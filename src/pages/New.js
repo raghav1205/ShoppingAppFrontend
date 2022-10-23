@@ -13,8 +13,8 @@ const New = () => {
         e.preventDefault()
         console.log('hi')
         
-        const API_URL  = `http://localhost:8080/products/${user.id}/new`
-        const response = await fetch(API_URL, {
+        const REACT_APP_API_URL  = `${process.env.REACT_APP_API_URL}/products/${user.id}/new`
+        const response = await fetch(REACT_APP_API_URL, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
