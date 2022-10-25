@@ -42,12 +42,12 @@ const Product = ({product}) => {
                     Buy Now
                 </button> 
                {
-                path === 'product'?<RequireAuth>
+                path === 'product'?
                 <button
                  onClick={handleAddToCart}
                  type="button" class="text-white bg-purple-800 hover:bg-purple-900 focus:outline-none focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm px-2.5 py-1.5 mr-2 mb-2 dark:bg-purple-800 dark:hover:bg-purple-700 dark:focus:ring-purple-700 dark:border-purple-700">
                     Add To Cart
-                </button></RequireAuth>
+                </button>
                 : <></>
                 }
                 </Link>

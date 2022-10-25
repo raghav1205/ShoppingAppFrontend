@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 import {useParams} from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import { useQueryClient } from 'react-query'
+import ReactStars from "react-rating-stars-component";
 
 const Review = ({product}) => { 
     console.log(product)
@@ -61,8 +62,7 @@ const Review = ({product}) => {
 
 
 const ReviewTile = ({review, user, product, queryClient}) => {
-    console.log(review)
-    const ratingArr = new Array(review.rating).fill(0)
+   
     const handleDelete = async ({reviewid, userid}) => {
         const API = `https://peaceful-beyond-47525.herokuapp.com/products/${product._id}/review/${review._id}`
         const response = await fetch(API, {
@@ -86,11 +86,13 @@ const ReviewTile = ({review, user, product, queryClient}) => {
                 <div className='flex flex-col items-start  justify-start'>
                    
                    <div className='w-full text-left'> {
-                        ratingArr.map(rating => {
-                    
-                    return <Star rating = {rating}/> 
-                        })
-                   }</div> 
+                       
+                     <ReactStars value={review.rating}  edit = {false}/>
+
+                        
+                  
+                }
+                   </div> 
                    
                     <p className='mb-2 text-left  w-full '>{review.description}</p>
                     <div className='flex flex-col'>
@@ -116,15 +118,21 @@ const Star = () => {
     )
 }
 
+
 const StarRating = ({setRating, rating}) => {
+    const ratingChanged = (newRating) => {
+        setRating(newRating)
+        };
+
     return (
-        <div className="rating">
-            <input type="radio" name="rating-1" className="mask mask-star  bg-orange-400" onClick = {() => setRating(1)}/>
-            <input type="radio" name="rating-1" className="mask mask-star  bg-orange-400" onClick = {() => setRating(2)}/>
-            <input type="radio" name="rating-1" className="mask mask-star  bg-orange-400" onClick = {() => setRating(3)}/>
-            <input type="radio" name="rating-1" className="mask mask-star  bg-orange-400" onClick = {() => setRating(4)}/>
-            <input type="radio" name="rating-1" className="mask mask-star  bg-orange-400" onClick = {() => setRating(5)}/>
-        </div>
+    <div className="flex items-center cursor-pointer">
+         <ReactStars  count={5}
+        onChange={ratingChanged}
+        size={24}
+        emptyIcon={<i className="far fa-star"></i>}
+        fullIcon={<i className="fa fa-star"></i>}
+        activeColor="#ffd700"/>
+    </div>
     )
 }
 
