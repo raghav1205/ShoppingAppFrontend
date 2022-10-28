@@ -31,7 +31,7 @@ const Navbar = () => {
   console.log(user)
   const dispatch = useDispatch();
   return (
-    <div className='bg-blue-500 text-white py-3 px-[3rem] md:py-3.5 md:px-[4.5rem] flex items-center justify-between font-montserrat md:w-full w-[25.5rem]'>
+    <div className='bg-blue-500 text-white py-3 px-[3rem] md:py-3.5 md:px-[4.5rem] flex items-center justify-between font-montserrat md:w-full w-[26rem]'>
         {/* <Register/> */}
     <div className='flex justify-start items-center font-orbitron'>
       <p className='text-xl w-full  tracking-widest'>Shopping Cart</p>

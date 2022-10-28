@@ -47,8 +47,8 @@ const Cart = () => {
             isLoading ? <h1>Loading...</h1>  
        
             :<div className = 'flex flex-col md:flex-row'>
-            <aside className='w-[26rem] md:w-[30rem] '>
-                <h1 className = 'text-xl md:my-3 text-left'>Items in your cart</h1>
+            <aside className='w-[23rem] md:w-[30rem] '>
+                <h1 className = 'text-xl md:my-3 text-left my-3'>Items in your cart</h1>
                 <div>
                     {
                         data?.cart.map(item => {
