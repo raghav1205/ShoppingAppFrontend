@@ -46,9 +46,9 @@ const Cart = () => {
         {
             isLoading ? <h1>Loading...</h1>  
        
-            :<>
-            <aside className='w-[30rem]'>
-                <h1 className = 'text-xl my-3 text-left'>Items in your cart</h1>
+            :<div className = 'flex flex-col md:flex-row'>
+            <aside className='w-[26rem] md:w-[30rem] '>
+                <h1 className = 'text-xl md:my-3 text-left'>Items in your cart</h1>
                 <div>
                     {
                         data?.cart.map(item => {
@@ -89,7 +89,7 @@ const Cart = () => {
                 </div>
             </div>
 
-             </>
+             </div>
         }
       
         </div>
@@ -100,8 +100,8 @@ const ItemTile = ({item, handleAddClick, handleRemoveClick}) => {
     return  <div className='flex  items-center 
     border-2 border-slate-300 rounded-lg'>
       
-      <img src={item.img} alt={item.name} width={140}/>
-      <div className='ml-[2rem] p-2 text-left  gap-1 w-[25rem]'>
+      <img src={item.img} alt={item.name} width={140} className = "w-[6rem] md:w-[10rem]"/>
+      <div className='md:ml-[2rem]  p-2 text-left  gap-1  w-[20rem] md:w-[25rem] mx-auto'>
           <h3 className='text-xl font-semibold'>{item.name}</h3>
           {/* <div className='flex flex-col border-2 border-emerald-500 items-center'> */}          
               {/* </div> */}
