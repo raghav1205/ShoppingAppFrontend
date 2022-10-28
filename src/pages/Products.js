@@ -11,7 +11,7 @@ const Products = () => {
         isLoading ?  <div>Loading...</div>
         : 
         <>
-        <div className='flex justify-center  md:w-full w-[25rem]'>
+        <div className='flex justify-center  md:w-full w-[20rem] mx-auto'>
             <div className='grid grid-cols-1 md:grid-cols-4 gap-3'>
                 {data.map(product => <Product key={product._id} product={product}/>)}   
             </div>
