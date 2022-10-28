@@ -30,11 +30,11 @@ const New = () => {
         console.log(res)
     }
     return <form  
-                    className = 'flex flex-col border-2 border-slate-200 w-[40rem] items-center justify-center mx-auto mt-[3rem] p-[3rem] gap-[1rem] rounded-lg'
+                    className = 'flex flex-col border-2 border-slate-200 w-[17rem]  md:w-[40rem] items-center justify-center mx-auto mt-[3rem] p-[3rem] gap-[1rem] rounded-lg'
             >
                 <>
                 <label forHtml = 'name'>
-                    <span className = 'flex justify-start w-[40rem] text-lg pl-[3rem]'>
+                    <span className = 'flex justify-start w-[20rem] md:w-[40rem] text-lg pl-[3rem]'>
                         Name
                     </span>
                 </label>
@@ -43,7 +43,7 @@ const New = () => {
                 
 
                 <label forHtml = 'price'>
-                    <span className = 'flex justify-start w-[40rem] text-lg pl-[3rem]'>
+                    <span className = 'flex justify-start w-[20rem] md:w-[40rem] text-lg pl-[3rem]'>
                         Price
                     </span>
                 </label>
@@ -51,7 +51,7 @@ const New = () => {
                  value = {price} onChange = {(e) => setPrice(e.target.value)}
                 />
                 <label forHtml = 'imageUrl'>
-                    <span className = 'flex justify-start w-[40rem] text-lg pl-[3rem]'>
+                    <span className = 'flex justify-start w-[20rem] md:w-[40rem] text-lg pl-[3rem]'>
                         Image Url
                     </span>
                 </label>
@@ -60,7 +60,7 @@ const New = () => {
                 <input type = 'text' className='border-2 py-1.5 rounded-md w-full'
                 value = {image} onChange = {(e) => setImage(e.target.value)}/>
                 <label forHtml = 'description'>
-                    <span className = 'flex justify-start w-[40rem] text-lg pl-[3rem]'>
+                    <span className = 'flex justify-start w-[20rem] md:w-[40rem] text-lg pl-[3rem]'>
                         Description
                     </span>
                 </label>
