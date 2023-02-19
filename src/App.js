@@ -8,6 +8,7 @@ import Products from './pages/Products';
 import RequireAuth from './components/RequireAuth';
 import Cart from './components/Cart'
 import New from './pages/New'
+import {ToastContainer} from 'react-toastify';
 import {
   BrowserRouter as Router,
   Routes,
@@ -32,6 +33,17 @@ function App() {
         <Route path = '/new' element = {<New/>} />
       </Routes>
     </div>
+    <ToastContainer
+      position="top-right"
+      autoClose={5000}
+      hideProgressBar={false}
+      newestOnTop={false}
+      closeOnClick
+      rtl={false}
+      pauseOnFocusLoss
+      draggable
+      pauseOnHover
+    />
     </Router>
   );
 }

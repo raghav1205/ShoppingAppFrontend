@@ -1,6 +1,9 @@
 import {useState} from 'react'
 import {useForm} from 'react-hook-form'
 import {useSelector} from 'react-redux'
+import {toast} from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
+
 const New = () => {
     const {register, handleSubmit, formState: { errors }} = useForm()
     const [name, setName] = useState('')
@@ -26,6 +29,11 @@ const New = () => {
                 img: image
             }),
         })
+        setName('')
+        setPrice('')
+        setDescription('')
+        setImage('')
+        toast.success('Product added successfully')
         const res = await response.json()
         console.log(res)
     }

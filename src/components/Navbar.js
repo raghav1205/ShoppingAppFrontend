@@ -14,7 +14,7 @@ const Navbar = () => {
   const [showHamburger, setShowHamburger] = useState(false);
   const {user} = useSelector(state => state.user);
   const {logout2} = useAuth();
-   
+  console.log(user)
   const {data, isLoading, isError} = useGetCart(user?.id);
   useEffect(() => {
       console.log('rerender')
@@ -41,7 +41,7 @@ const Navbar = () => {
       {
         user?.userType === 'retailer' ? 
         <Link to = '/new'>
-           <p className='text-md font-montserrat ml-[2rem] font-thin text-slate-50 hidden md:flex-inline'>
+           <p className='text-md  font-montserrat ml-[2rem] hidden md:flex'>
             New 
           </p>
         </Link>
