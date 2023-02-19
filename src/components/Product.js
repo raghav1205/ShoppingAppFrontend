@@ -14,7 +14,8 @@ const Product = ({product}) => {
     // console.log(user)
     const useQuery = useQueryClient()
     const handleAddToCart = async () => { 
-        const REACT_APP_API_URL = `https://peaceful-beyond-47525.herokuapp.com/${product._id}/cart`
+        console.log(process.env.REACT_APP_BACKEND_URL)
+        const REACT_APP_API_URL = `${process.env.REACT_APP_BACKEND_URL}/product/${product._id}/cart`
         const response = await fetch(REACT_APP_API_URL, {
             method: 'POST',
             headers: {

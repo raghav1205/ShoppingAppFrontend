@@ -13,7 +13,7 @@ const New = () => {
         e.preventDefault()
         console.log('hi')
         
-        const REACT_APP_API_URL  = `https://peaceful-beyond-47525.herokuapp.com/products/${user.id}/new`
+        const REACT_APP_API_URL  = `${process.env.REACT_APP_BACKEND_URL}/products/${user.id}/new`
         const response = await fetch(REACT_APP_API_URL, {
             method: 'POST',
             headers: {

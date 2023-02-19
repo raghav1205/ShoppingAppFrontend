@@ -34,7 +34,7 @@ const Navbar = () => {
     <div className='bg-blue-500 text-white py-3 px-[3rem] md:py-3.5 md:px-[4.5rem] flex items-center justify-between font-montserrat md:w-full  '>
         {/* <Register/> */}
     <div className='flex justify-start items-center font-orbitron'>
-      <p className='text-xl w-full  tracking-widest'>Shopping Cart</p>
+      <Link to = '/products'><p className='text-xl w-full  tracking-widest'>Shopping Cart</p></Link>
       <Link to = '/products'>
         <p className='text-md font-montserrat ml-[2rem] font-thin text-slate-50 hidden md:flex-inline'>Products</p>
       </Link>
@@ -109,7 +109,7 @@ const Navbar = () => {
     {
       showHamburger ?
       <RefModal show = {showHamburger} onClickOutside = {setShowHamburger}>
-        <div className='flex flex-col bg-sky-800 text-white absolute top-0 right-0 w-1/2 h-screen justify-center items-center'>
+        <div className='flex flex-col bg-sky-800 text-white  top-0 right-0 w-1/2 h-[100vh] fixed justify-center items-center'>
         <div>
               <Link to = '/cart'>
               <button type="button" class="inline-flex relative items-center p-3 text-sm font-medium text-center text-white  rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">

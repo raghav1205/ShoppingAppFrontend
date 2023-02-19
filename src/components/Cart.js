@@ -8,7 +8,7 @@ const Cart = () => {
   const queryClient = useQueryClient()
  
   const handleRemoveClick = async (id) => {
-    const REACT_APP_API_URL = `https://peaceful-beyond-47525.herokuapp.com/cart/${id}/decrement`
+    const REACT_APP_API_URL = `${process.env.REACT_APP_BACKEND_URL}/cart/${id}/decrement`
     const response = await fetch(REACT_APP_API_URL, {
         method: 'DELETE',
         headers: {
@@ -24,7 +24,7 @@ const Cart = () => {
   }
 
   const handleAddClick = async (id) => {
-    const REACT_APP_API_URL = `https://peaceful-beyond-47525.herokuapp.com/cart/${id}/increment`
+    const REACT_APP_API_URL = `${process.env.REACT_APP_BACKEND_URL}/cart/${id}/increment`
     const response = await fetch(REACT_APP_API_URL, {
         method: 'POST',
         headers: {
@@ -41,14 +41,14 @@ const Cart = () => {
   }
 
   return (
-    <main className='flex justify-center w-full'>
+    <main className='flex justify-center md:gap-[2.5rem] w-full'>
         <div className = 'flex justify-around w-full'>
         {
             isLoading ? <h1>Loading...</h1>  
        
             :<div className = 'flex flex-col md:flex-row'>
             <aside className='w-[23rem] md:w-[30rem] '>
-                <h1 className = 'text-xl md:my-3 text-left my-3'>Items in your cart</h1>
+                <h1 className = 'text-xl md:my-3 md:text-left my-3'>Items in your cart</h1>
                 <div>
                     {
                         data?.cart.map(item => {
@@ -65,8 +65,8 @@ const Cart = () => {
 
             </aside> 
             <div>
-                <h2 className = 'text-left text-xl my-3'>Summary</h2>
-                <section className = 'border-2 border-b-0 border-slate-300 rounded-lg'>
+                <h2 className = 'md:text-left text-xl my-3 md:ml-[1.25rem]'>Summary</h2>
+                <section className = 'border-2 border-b-0 border-slate-300 rounded-lg mx-[1.5rem]'>
                     
                         {
                             data?.cart?.map((item)=>{
@@ -82,7 +82,7 @@ const Cart = () => {
                             <span className = 'font-semibold'>Total Amount : ${data.totalAmount}</span>
                         </p>
                 </section> 
-                <div className = 'flex justify-start mt-3'>
+                <div className = 'flex justify-start mt-3 ml-[2rem]'>
                     <button type="button" class="text-white bg-green-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-2.5 py-1.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
                         Checkout
                     </button>
@@ -98,7 +98,7 @@ const Cart = () => {
 }
 const ItemTile = ({item, handleAddClick, handleRemoveClick}) => {
     return  <div className='flex  items-center 
-    border-2 border-slate-300 rounded-lg'>
+    border-2 border-slate-300 rounded-lg md:mx-0 mx-[1.5rem]'>
       
       <img src={item.img} alt={item.name} width={140} className = "w-[6rem] md:w-[10rem]"/>
       <div className='md:ml-[2rem]  p-2 text-left  gap-1  w-[20rem] md:w-[25rem] mx-auto'>

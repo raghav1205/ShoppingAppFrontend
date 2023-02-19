@@ -7,7 +7,7 @@ import { useQuery } from 'react-query';
 
 const useGetProduct = (productid) => {
     const {data, isLoading, error} = useQuery(['product', productid], () => {
-        return fetch(`https://peaceful-beyond-47525.herokuapp.com/products/${productid}`).then(res => res.json())
+        return fetch(`${process.env.REACT_APP_BACKEND_URL}/products/${productid}`).then(res => res.json())
     })
     console.log(data);
     return {data, isLoading, error}

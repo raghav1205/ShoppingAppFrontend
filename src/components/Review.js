@@ -17,7 +17,7 @@ const Review = ({product}) => {
 
       console.log(productid)
 
-    const REACT_APP_API_URL = `https://peaceful-beyond-47525.herokuapp.com/products/${productid}/review`
+    const REACT_APP_API_URL = `${process.env.REACT_APP_BACKEND_URL}/products/${productid}/review`
     const response = await fetch(REACT_APP_API_URL, {
         method: 'POST',
         headers: {
@@ -64,7 +64,7 @@ const Review = ({product}) => {
 const ReviewTile = ({review, user, product, queryClient}) => {
    
     const handleDelete = async ({reviewid, userid}) => {
-        const API = `https://peaceful-beyond-47525.herokuapp.com/products/${product._id}/review/${review._id}`
+        const API = `${process.env.REACT_APP_BACKEND_URL}/products/${product._id}/review/${review._id}`
         const response = await fetch(API, {
             method: 'DELETE',
             headers: {

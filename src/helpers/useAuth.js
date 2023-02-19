@@ -4,9 +4,7 @@ const authContext = React.createContext();
 
 function useAuth() {
   const [authed, setAuthed] = React.useState(() => {
-    const user = window.localStorage.getItem("user");
-    console.log(user)
-    return user ? true : null;
+   return true
   });
 
   return {

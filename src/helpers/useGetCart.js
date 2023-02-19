@@ -1,7 +1,7 @@
 import { useQuery } from "react-query"
 const useGetCart = (userid) => {
     const {data, isLoading, isError} = useQuery(['cart'], () => {
-        return fetch(`https://peaceful-beyond-47525.herokuapp.com/cart/${userid}`).then(res => res.json())
+        return fetch(`${process.env.REACT_APP_BACKEND_URL}/cart/${userid}`).then(res => res.json())
     },
     {
         enabled: !!userid
