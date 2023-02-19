@@ -4,7 +4,7 @@ const authContext = React.createContext();
 
 function useAuth() {
   const [authed, setAuthed] = React.useState(() => {
-   return true
+   return false
   });
 
   return {
